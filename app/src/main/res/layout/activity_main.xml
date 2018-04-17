@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    tools:context="com.app.admin.cook.view.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/themFragment">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/appbar"
+                android:background="@color/colorPrimary"
+                android:fitsSystemWindows="true">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/collapsingToolbar"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                    <android.support.v7.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:id="@+id/toolbar"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        app:layout_collapseMode="pin"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layoutSearch"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bgsearch"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
+                        app:layout_collapseMode="parallax">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btnSearch"
+                            android:drawableRight="@drawable/ic_search_black_24dp"
+                            android:text="Tìm kiếm món ăn"
+                            android:layout_gravity="start"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="false"
+                            android:layout_weight="1"
+                            android:background="@drawable/selectorbgsearch"
+                            android:textColor="@color/colorGray"
+                            android:padding="10dp"/>
+                    </LinearLayout>
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ViewFlipper
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:id="@+id/viewFliper"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:id="@+id/txtMonAnMoiNhat"
+                        android:text="@string/mon_an_moi_nhat"
+                        android:textSize="25sp"
+                        android:paddingLeft="10dp"
+                        android:textColor="#ff00"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/rvMonAnMoiNhat">
+
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+            </FrameLayout>
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navViewMenu">
+
+        <include layout="@layout/nav_header"/>
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

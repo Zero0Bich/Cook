@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cook</string>
+    <string name="open">Mở</string>
+    <string name="close">Đóng</string>
+    <string name="facebook_app_id">716916738698861</string>
+    <string name="dk_mat_khau">Mật khẩu phải bao gồm ít nhất 6 ký tự</string>
+    <string name="mon_an_moi_nhat">Món ăn mới nhất</string>
+</resources>
